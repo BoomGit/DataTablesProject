@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Datatables</title>
+		<!--样式文件-->
+		<link rel="stylesheet" type="text/css" href="DataTables-1.10.10/css/jquery.dataTables.min.css">
+		<!--jquery js-->
+		<script src="DataTables-1.10.10/js/jquery.js"></script>
+		<!--DataTables 核心 js-->
+		<script src="DataTables-1.10.10/js/jquery.dataTables.min.js"></script>
+		<script>
+			$.ready(function() {
+				oTable = $('#students').DataTable({
+					"AutoWidth": true,
+					"sScrollX": "100%",
+					"bProcessing": true,
+					"sScrollXInner": "110%",
+					//"pagingType": "scrolling",
+					//"serverSide": true,
+					//"iDisplayLength": 5, //一页显示条数	
+					"bPaginate": true, //翻页功能  
+					"bLengthChange": true, //改变每页显示数据数量
+					//"language": {	"url": "/DataTables-1.10.10/Chinese.json"},
+					"columnDefs": [{
+						"sortable": false, //属性 false不排序 true 排序
+						"orderable": false,
+						"targets": [1, 2] //目标
+					}],
+					"order": [ //设置默认排序
+						[0, 'desc']
+					]
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<table id="students" class="display">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Sex</th>
+					<th>Old</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>001</td>
+					<td>张三</td>
+					<td>男</td>
+					<td>16</td>
+				</tr>
+
+				<tr>
+					<td>002</td>
+					<td>小吴</td>
+					<td>男</td>
+					<td>16</td>
+				</tr>
+				<tr>
+					<td>003</td>
+					<td>小徐</td>
+					<td>男</td>
+					<td>20</td>
+				</tr>
+				<tr>
+					<td>004</td>
+					<td>小三</td>
+					<td>女</td>
+					<td>16</td>
+				</tr>
+				<tr>
+					<td>005</td>
+					<td>小李</td>
+					<td>男</td>
+					<td>26</td>
+				</tr>
+				<tr>
+					<td>006</td>
+					<td>小刘</td>
+					<td>女</td>
+					<td>32</td>
+				</tr>
+				<tr>
+					<td>007</td>
+					<td>小王</td>
+					<td>男</td>
+					<td>21</td>
+				</tr>
+				<tr>
+					<td>008</td>
+					<td>张三</td>
+					<td>男</td>
+					<td>23</td>
+				</tr>
+
+			</tbody>
+		</table>
+	</body>
+
+</html>
